@@ -1,0 +1,22 @@
+/* proops & state style on class & functional */
+.Daftar {
+    border: 1px solid white;
+    padding: 20px;
+    text-align: start;
+} .daftar {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+} .home {
+    display: block;
+} .box-stock {
+    border: 2px solid white;
+    margin: 5% 28%;
+} .btn-onclick {
+    padding: 10px;
+} .jml {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for crudReactJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon start"
+  },
+  "keywords": [
+    "reactJS",
+    "-",
+    "Backend"
+  ],
+  "author": "Lucky Ardhika",
+  "license": "ISC",
+  "dependencies": {
+    "http-errors": "^1.8.0"
+  }
+}
