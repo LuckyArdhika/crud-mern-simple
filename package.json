@@ -1,1 +1,6 @@
-cd frontend && npm i && cd backend && npm i
+  "scripts": {
+    "frontend": "cd frontend && npm start",
+    "api": "cd backend && nodemon index.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
