@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "a simple mern crud",
   "main": "backend/index.js",
+  "engines": {
+    "node": "15.4.0"
+  },
   "dependencies": {
     "accepts": "^1.3.7",
     "acorn": "^7.4.1",
