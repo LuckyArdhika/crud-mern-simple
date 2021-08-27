@@ -21,8 +21,9 @@ export default class EditStudent extends Component {
   }
 
   componentDidMount() {
+    let host = get('host');
     const getapi = async (data) => {
-      await fetch('http://localhost:4000/students/edit-student/' + this.props.match.params.id)
+      await fetch("https://"+host+":4000/students/edit-student/" + this.props.match.params.id)
         .then((response) => response.json())
         .then(Getapi => {
           this.setState({
@@ -60,7 +61,7 @@ export default class EditStudent extends Component {
       rollno: this.state.rollno
     };
 
-    fetch('http://localhost:4000/students/update-student/' + this.props.match.params.id, {
+    fetch("https://"+host+"t:4000/students/update-student/" + this.props.match.params.id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

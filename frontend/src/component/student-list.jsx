@@ -15,8 +15,9 @@ export default class StudentList extends Component {
   
   componentDidMount() {
     const getapi = async () => {
+      let host = get('host');
       // Storing response
-      await fetch("http://localhost:4000/students")
+      await fetch("https://"+host+":4000/students")
       .then((response) => response.json())
       .then(StudentList => {
         console.log(StudentList);

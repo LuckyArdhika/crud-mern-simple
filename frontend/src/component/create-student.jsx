@@ -46,7 +46,8 @@ export default class CreateStudent extends Component {
       rollno: this.state.rollno
     };
 
-    const createLink = "http://localhost:4000/students/create-student";
+    let host = get('host');
+    const createLink = "https://"+host+":4000/students/create-student";
     async function postData(url = '', data = {}) {
       // Default options are marked with *
       const response = await fetch(url, {

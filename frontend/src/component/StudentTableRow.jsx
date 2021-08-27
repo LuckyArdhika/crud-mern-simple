@@ -12,7 +12,8 @@ const StudentTableRow = (props) => {
     let history = useHistory();
 
     const DeleteStudentConfirmed = (e) => {
-        fetch("http://localhost:4000/students/delete-student/" + props.obj._id, {method: 'DELETE'})
+        let host = get('host');
+        fetch("https://"+host+":4000/students/delete-student/" + props.obj._id, {method: 'DELETE'})
         .then((res) => {
             console.log('Student successfully deleted!')
         }).catch((error) => {
