@@ -33,7 +33,7 @@ export default class CreateStudent extends Component {
     this.setState({rollno: e.target.value})
   }
 
-  onSubmit(e) {
+  onSubmit(e, req) {
     e.preventDefault()
     console.log(`Student successfully created!`);
     console.log(`Name: ${this.state.name}`);
@@ -46,7 +46,8 @@ export default class CreateStudent extends Component {
       rollno: this.state.rollno
     };
 
-    let host = get('host');
+    let host = window.location.hostname; //getting hostname, only can using inside componentDidMount!
+    console.log("Host terdeteksi: "+host)
     const createLink = "https://"+host+":4000/students/create-student";
     async function postData(url = '', data = {}) {
       // Default options are marked with *

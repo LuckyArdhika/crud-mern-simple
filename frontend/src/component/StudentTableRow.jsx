@@ -1,6 +1,6 @@
 // using for wadah keys
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -12,15 +12,17 @@ const StudentTableRow = (props) => {
     let history = useHistory();
 
     const DeleteStudentConfirmed = (e) => {
-        let host = get('host');
-        fetch("https://"+host+":4000/students/delete-student/" + props.obj._id, {method: 'DELETE'})
-        .then((res) => {
-            console.log('Student successfully deleted!')
-        }).catch((error) => {
-            console.log(error)
-        })
-        // redirected to /student-list
-        history.push('/student-list')
+        useEffect(() => {
+            let host = window.location.hostname;
+            fetch("https://"+host+":4000/students/delete-student/" + props.obj._id, {method: 'DELETE'})
+            .then((res) => {
+                console.log('Student successfully deleted!')
+            }).catch((error) => {
+                console.log(error)
+            })
+            // redirected to /student-list
+            history.push('/student-list')
+        }, []);
     }
     return (
         <tr>
@@ -36,9 +38,9 @@ const StudentTableRow = (props) => {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Delete Confirmation</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>Are u really want to delete this students?</Modal.Body>
                 <Modal.Footer>
                 <Button variant="secondary" onClick={handleClose}>
                     Cancel

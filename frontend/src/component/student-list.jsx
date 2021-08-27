@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Table from 'react-bootstrap/Table';
 import StudentTableRow from './StudentTableRow';
 
-
 export default class StudentList extends Component {
 
   constructor(props) {
@@ -14,8 +13,9 @@ export default class StudentList extends Component {
   }
   
   componentDidMount() {
+    let host = window.location.hostname; //getting hostname, only can using inside componentDidMount!
+    console.log(host);
     const getapi = async () => {
-      let host = get('host');
       // Storing response
       await fetch("https://"+host+":4000/students")
       .then((response) => response.json())

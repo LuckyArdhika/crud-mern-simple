@@ -16,13 +16,15 @@ export default class EditStudent extends Component {
     this.state = {
       name: '',
       email: '',
-      rollno: ''
+      rollno: '',
+      hostname: ''
     }
   }
 
   componentDidMount() {
-    let host = get('host');
-    const getapi = async (data) => {
+    let host = window.location.hostname;
+    this.setState({hostname: host})
+    const getapi = async () => {
       await fetch("https://"+host+":4000/students/edit-student/" + this.props.match.params.id)
         .then((response) => response.json())
         .then(Getapi => {
@@ -54,14 +56,14 @@ export default class EditStudent extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-
     const studentObject = {
       name: this.state.name,
       email: this.state.email,
       rollno: this.state.rollno
     };
 
-    fetch("https://"+host+"t:4000/students/update-student/" + this.props.match.params.id, {
+    let host = this.state.hostname;
+    fetch("https://"+host+":4000/students/update-student/" + this.props.match.params.id, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
