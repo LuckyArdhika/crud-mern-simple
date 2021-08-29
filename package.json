@@ -1069,10 +1069,10 @@
   },
   "devDependencies": {},
   "scripts": {
+    "test": "npm run build /frontend && node backend/index.js",
     "frontend": "cd frontend && npm start",
     "api": "cd backend && node index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\"",
-    "heroku-postbuild": "npm run build /frontend && node backend/index.js"
+    "dev": "concurrently --kill-others-on-fail \"npm run api\" \"npm run frontend\""
   },
   "repository": {
     "type": "git",
