@@ -49,7 +49,7 @@ app.use('/students', studentRoute)
 
 
 // PORT
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 443;
 const server = app.listen(port, () => {
   console.log('Connected to port ' + port)
 })
