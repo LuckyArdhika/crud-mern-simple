@@ -48,7 +48,7 @@ export default class CreateStudent extends Component {
 
     let host = window.location.hostname; //getting hostname, only can using inside componentDidMount!
     console.log("Host terdeteksi: "+host)
-    const createLink = "https://"+host+":4000/students/create-student";
+    const createLink = "https://"+host+"/students/create-student";
     async function postData(url = '', data = {}) {
       // Default options are marked with *
       const response = await fetch(url, {
