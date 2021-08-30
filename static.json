@@ -1,0 +1,3 @@
+{ "root": "backend/index.js", "routes": { "/**": "frontend" } }
+
+"heroku-postbuild": "npm run build /frontend && node backend/index.js"
